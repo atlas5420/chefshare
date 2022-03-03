@@ -30,6 +30,7 @@ dependencies {
 	implementation group: 'org.springframework.security', name: 'spring-security-taglibs', version: '5.3.13.RELEASE'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.3.7.RELEASE'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.1.1.RELEASE'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	implementation group: 'javax.servlet', name: 'jstl', version: '1.2'
 	testImplementation("org.junit.vintage:junit-vintage-engine") {exclude group: "org.hamcrest", module: "hamcrest-core"}
