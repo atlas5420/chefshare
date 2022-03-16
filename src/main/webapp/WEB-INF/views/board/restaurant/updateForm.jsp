@@ -23,7 +23,7 @@
 
 		<div class="form-group ">
 			<label for="cuisine">Cuisine :</label>
-			<input type="text"  class="w-25 text-center" name="cuisine" value=""  id="cuisine" readonly>
+			<input type="text"  class="w-25 text-center" name="cuisine" value="${restaurant.cuisine }"  id="cuisine" readonly>
 			<br /> 
 			<input type="radio" class="form-check-input" name="cuisineSelect" value="한식"  onchange="selectCuisine()" />&nbsp;한식&nbsp;&nbsp;
 			<input type="radio" class="form-check-input" name="cuisineSelect" value="중식"  onchange="selectCuisine()" />&nbsp;중식 &nbsp;&nbsp; 
@@ -58,12 +58,10 @@
 		</div>
 	</form>
 	
-	<button id="btn-restaurant-write" class="btn btn-primary">등록</button>
-	<button id="btn-restaurant-update" class="btn btn-primary">수정</button>
-	<button id="btn-restaurant-delete" class="btn btn-primary">삭제</button>
+	<button id="btn-restaurant-update"  class="btn btn-primary">수정</button>
 
-	<script src="../js/restaurant.js"></script>
-	<script src="../js/scripts.js"></script>
+	<script src="../../js/restaurant.js"></script>
+	<script src="../../js/scripts.js"></script>
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

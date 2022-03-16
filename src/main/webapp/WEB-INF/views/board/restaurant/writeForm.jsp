@@ -51,7 +51,10 @@
 			<input type="text" class="w-75 "  id="address" placeholder="주소를 입력해 주세요">
 		</div>
 		<br />
-		<div class="form-group ">
+	</form>
+	
+	<form action="/restaurant/writeProc" method="post" enctype="multipart/form=data">
+	<div class="form-group ">
 			<label for="image">Image :&nbsp;</label>
 			<input type="file"  id="image" >
 		</div>

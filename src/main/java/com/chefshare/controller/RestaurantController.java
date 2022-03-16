@@ -29,18 +29,14 @@ public class RestaurantController {
 
 	@GetMapping("/restaurant/{id}")
 	public String findById(@PathVariable int id, Model model) {
-		model.addAttribute("board", restaurantService.read(id));
+		model.addAttribute("restaurant", restaurantService.read(id));
 		return "/board/restaurant/contentDetail";
 	}
 
-	@GetMapping("/restaurant/{id}/update")
+	@GetMapping("/restaurant/update/{id}")
 	public String update(@PathVariable int id, Model model) {
 		model.addAttribute("restaurant", restaurantService.read(id));
 		return "/board/restaurant/updateForm";
 	}
-
-	@GetMapping("/restaurant/update/{id}")
-	public String update() {
-		return "/board/restaurant/updateForm";
-	}
+ 
 }

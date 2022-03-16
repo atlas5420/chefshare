@@ -58,22 +58,24 @@ let restaurantindex = {
 			dataType: "json"
 		}).done(function(resp) {
 			alert("글수정 완료");
-			location.href = "/forum/" + id;
+			location.href = "/restaurant/" + id;
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		})
 	},
 
 	deleteContent: function() {
-		let id = $("#id").text();
+		let id = $("#id").val();
+		
 		$.ajax({
 			type: "DELETE",
-			url: "/forum/deleteProc/" + id,
+			url: "/restaurant/deleteProc/" + id,
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(resp) {
+		console.log(id);
 			alert("삭제 완료");
-			location.href = "/forum";
+			location.href = "/restaurant";
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});

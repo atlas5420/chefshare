@@ -8,11 +8,6 @@
 <title>Insert title here</title>
 <%@ include file="../../layout/header.jsp"%>
 <%@include file="../../layout/boardLayout.jsp"%>
-<style>
-.cardsize{
-	width:40%;
-}
-</style>
 </head>
 <body>
 
@@ -24,15 +19,15 @@
 				onclick="location.href='/restaurant/write'">업체 등록</button>
 		</h2>
 		<br /> <br />
-	<div class="container ">
+	<div class="container justify-content-center">
 		<c:forEach var="restaurant" items="${restaurants }">
-				<div class="card cardsize m-3" >
-				이미지
+				<div class="card w-50 m-3" >
+					<img class="card-img-top" src="img_avatar1.png" alt="Card image">
 					<div class="card-body">
 						<h4 class="card-title">${restaurant.title }&nbsp;
 							${restaurant.cuisine }</h4>
 						<p class="card-text">${restaurant.content}</p>
-						<a href="/restaurant/${restaurant.id }" class="btn btn-primary">상세정보</a>
+						<a href="#"" class="btn btn-primary">상세정보</a>
 					</div>
 				</div>
 		</c:forEach>

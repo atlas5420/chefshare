@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.chefshare.service.BoardService;
+import com.chefshare.service.RestaurantService;
 
 @Controller
 public class IndexController {
@@ -16,8 +17,13 @@ public class IndexController {
 	@Autowired
 	private BoardService boardService;
 	
+	@Autowired
+	private RestaurantService restaurantService;
+	
 	@GetMapping({ "", "/" })
-	public String index() {
+	public String index(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
+		model.addAttribute("restaurant", restaurantService.indexlist(pageable));
+		model.addAttribute("boards", boardService.list(pageable));
 		return "index";
 	}
 	
