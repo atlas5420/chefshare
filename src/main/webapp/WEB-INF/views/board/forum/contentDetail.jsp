@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../layout/header.jsp"%>
-<%@ include file="../layout/boardLayout.jsp"%>
+<%@ include file="../../layout/header.jsp"%>
+<%@ include file="../../layout/boardLayout.jsp"%>
 <link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
 	rel="stylesheet">
@@ -35,7 +35,7 @@
 		<div class="d-flex justify-content-end">
 			<c:if test="${board.user.id == principal.user.id }">
 				<button class="btn btn-warning"
-					onclick="location.href='/board/update/${board.id}'">수정</button>
+					onclick="location.href='/forum/update/${board.id}'">수정</button>
 				<button id="btn-board-delete" class="btn btn-danger">삭제</button>
 			</c:if>
 			<button class="btn btn-dark" onclick="location.href='/board'">목록</button>
@@ -83,6 +83,6 @@
 	<script src="../js/reply.js"></script>
 	<script src="../js/board.js"></script>
 	<script src="../js/scripts.js"></script>
-	<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

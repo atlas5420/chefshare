@@ -21,19 +21,19 @@ public class BoardApiController {
 	@Autowired
 	private BoardService boardService;
 
-	@PostMapping("/board/writeProc")
+	@PostMapping("/forum/writeProc")
 	public ResponseDto<Integer> save(@RequestBody Board board, @AuthenticationPrincipal PrincipalDetail principal) {
 		boardService.write(board, principal.getUser());
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
-	@PutMapping("/board/updateProc/{id}")
+	@PutMapping("/forum/updateProc/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Board board){
 		boardService.update(id, board);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
-	@DeleteMapping("/board/deleteProc/{id}")
+	@DeleteMapping("/forum/deleteProc/{id}")
 	public ResponseDto<Integer> deleteById(@PathVariable int id){
 		boardService.delete(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);

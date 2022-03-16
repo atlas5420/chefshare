@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="sec"
 	uri="http://www.springframework.org/security/tags"%>
 
@@ -40,27 +40,34 @@
 				<c:choose>
 					<c:when test="${empty principal}">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item"><a class="nav-link active"
+							<li class="nav-item"><a class="nav-link hover"
 								aria-current="page" href="/">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="/board">Board</a></li>
-							<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
-							<li class="nav-item"><a class="nav-link" href="/register">Join</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/recipe">recipe</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/restaurant">restaurant</a></li>
+							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>
+							<li class="nav-item"><a class="nav-link hover" href="/login">Login</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/register">Join</a></li>
 						</ul>
 					</c:when>
 					<c:otherwise>
-						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-							<li class="nav-item"><a class="nav-link active"
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+							<li class="nav-item"><a class="nav-link hover"
 								aria-current="page" href="/">Home</a></li>
-							<li class="nav-item"><a class="nav-link" href="/board">Board</a></li>
-							<li class="nav-item"><a class="nav-link"
+							<li class="nav-item"><a class="nav-link hover"
+								href="/recipe">recipe</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/restaurant">restaurant</a></li>
+							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>
+							<li class="nav-item"><a class="nav-link hover"
 								href="/profile">회원정보</a></li>
-							<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/logout">Logout</a></li>
 						</ul>
 					</c:otherwise>
 				</c:choose>
-
-
-
 			</div>
 		</div>
 	</nav>

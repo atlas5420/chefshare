@@ -5,15 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../layout/header.jsp"%>
-<%@ include file="../layout/boardLayout.jsp"%>
+<%@ include file="../../layout/header.jsp"%>
+<%@ include file="../../layout/boardLayout.jsp"%>
+
+<!-- summernote libraries -->
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- summernote css/js -->
 <link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-	<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -36,6 +40,6 @@
 	</script>
 	<script src="../js/board.js"></script>
 	<script src="../js/scripts.js"></script>
-	<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

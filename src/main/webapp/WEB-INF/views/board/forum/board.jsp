@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../layout/header.jsp"%>
-<%@include file="../layout/boardLayout.jsp"%>
+<%@ include file="../../layout/header.jsp"%>
+<%@include file="../../layout/boardLayout.jsp"%>
 </head>
 <body>
 
@@ -27,14 +27,13 @@
 				<tbody>
 					<tr>
 						<td>${board.id }</td>
-						<td><a href="/board/${board.id }">${board.title }</a></td>
+						<td><a href="/forum/${board.id }">${board.title }</a></td>
 						<th>${board.user.username }</th>
 						<td>${board.timestamp }</td>
 					</tr>
 				</tbody>
 			</c:forEach>
 		</table>
-
 		<ul class="pagination justify-content-center">
 			<c:choose>
 				<c:when test="${boards.first }">
@@ -61,13 +60,13 @@
 		<c:if test="${principal.user.id ne null}">
 			<div class="container d-flex justify-content-end">
 				<button type="button" class="btn btn-outline-dark"
-					onclick="location.href='/board/wirte'">글쓰기</button>
+					onclick="location.href='/forum/wirte'">글쓰기</button>
 				<button type="button" class="btn btn-outline-dark">Dark</button>
 			</div>
 		</c:if>
 	</div>
 
 
-	<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

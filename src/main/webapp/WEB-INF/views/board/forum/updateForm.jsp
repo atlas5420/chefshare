@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<%@ include file="../layout/header.jsp"%>
-<%@include file="../layout/boardLayout.jsp"%>
+<%@ include file="../../layout/header.jsp"%>
+<%@include file="../../layout/boardLayout.jsp"%>
 <link
 	href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css"
 	rel="stylesheet">
@@ -36,6 +36,6 @@
 	</script>
 	<script src="../../js/board.js"></script>
 	<script src="../../js/scripts.js"></script>
-	<%@ include file="../layout/footer.jsp"%>
+	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

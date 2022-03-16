@@ -18,28 +18,28 @@ public class BoardController {
 
 	@Autowired
 	private BoardService boardService;
-
-	@GetMapping("/board")
+	
+	@GetMapping("/forum")
 	public String board(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) {
 		model.addAttribute("boards", boardService.list(pageable));
-		return "/board/board";
+		return "/board/forum/board";
 	}
 
-	@GetMapping("/board/wirte")
+	@GetMapping("/forum/wirte")
 	public String write(@AuthenticationPrincipal PrincipalDetail principal) {
 		System.out.println("로그인 아이디  : " + principal.getUsername());
-		return "/board/writeForm";
+		return "/board/forum/writeForm";
 	}
 	
-	@GetMapping("/board/{id}")
+	@GetMapping("/forum/{id}")
 	public String findById(@PathVariable int id, Model model) {
 		model.addAttribute("board", boardService.read(id));
-		return "board/contentDetail";
+		return "/board/forum/contentDetail";
 	}
 	
-	@GetMapping("/board/update/{id}")
+	@GetMapping("/forum/update/{id}")
 	public String update(@PathVariable int id, Model model) {
 		model.addAttribute("board", boardService.read(id));
-		return "board/updateForm";
+		return "/board/forum/updateForm";
 	}
 }

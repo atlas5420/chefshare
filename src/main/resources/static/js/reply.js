@@ -1,4 +1,4 @@
-let index = {
+let replyindex = {
 	init: function() {
 		$("#btn-reply-write").on("click", () => {
 			this.write();
@@ -40,4 +40,4 @@ let index = {
 		})
 	}
 }
-index.init();
+replyindex.init();

@@ -6,7 +6,7 @@
 <%@ include file="../layout/header.jsp"%>
 </head>
 <body>
-	<div class="container">
+	<div class="container ">
 		<form action="/login/loginProc" method="post">
 			<div class="form-group ">
 				<label for="username">Username</label> <input type="text"

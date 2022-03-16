@@ -1,12 +1,12 @@
-let forumindex = {
+let restaurantindex = {
 	init: function() {
-		$("#btn-board-write").on("click", () => {
+		$("#btn-restaurant-write").on("click", () => {
 			this.write();
 		});
-		$("#btn-board-update").on("click", () => {
+		$("#btn-restaurant-update").on("click", () => {
 			this.update();
 		});
-		$("#btn-board-delete").on("click", () => {
+		$("#btn-restaurant-delete").on("click", () => {
 			this.deleteContent();
 		});
 	},
@@ -16,21 +16,26 @@ let forumindex = {
 	write: function() {
 		let data = {
 			title: $("#title").val(),
-			content: $("#content").val()
+			content: $("#content").val(),
+			cuisine: $("#cuisine").val(),
+			region: $("#region").val(),
+			address: $("#address").val(),
+			image:$("#image").val()
 		}
 
 		$.ajax({
 			type: "POST",
-			url: "/forum/writeProc",
+			url: "/restaurant/writeProc",
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
 		}).done(function(resp) {
 				alert("글작성 완료");
-				location.href = "/forum";
+				location.href = "/restaurant";
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		})
+		
 	},
 
 	update: function() {
@@ -38,12 +43,16 @@ let forumindex = {
 
 		let data = {
 			title: $("#title").val(),
-			content: $("#content").val()
+			content: $("#content").val(),
+			cuisine: $("#cuisine").val(),
+			region: $("#region").val(),
+			address: $("#address").val(),
+			image:$("#image").val()
 		}
 
 		$.ajax({
 			type: "PUT",
-			url: "/forum/updateProc/" + id,
+			url: "/restaurant/updateProc/" + id,
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
@@ -71,4 +80,4 @@ let forumindex = {
 	}
 
 }
-forumindex.init();
+restaurantindex.init();
