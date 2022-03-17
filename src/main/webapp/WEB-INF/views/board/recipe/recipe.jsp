@@ -11,26 +11,27 @@
 </head>
 <body>
 
-	<div class="container">
+	<div class="container ">
 		<br />
-		<h2>
-			Restaurants
+		<div class="d-flex justify-content-between">
+			<h2>Recipe(레시피)</h2>
 			<button type="button" class="btn btn-dark"
-				onclick="location.href='/restaurant/write'">업체 등록</button>
-		</h2>
+				onclick="location.href='/restaurant/write'">레시피 등록</button>
+		</div>
+		<p>검색 : <input type="text"></p>
 		<br /> <br />
-	<div class="container justify-content-center">
-		<c:forEach var="restaurant" items="${restaurants }">
-				<div class="card w-50 m-3" >
+		<div class="container justify-content-center">
+			<c:forEach var="restaurant" items="${recipe}">
+				<div class="card w-50 m-3">
 					<img class="card-img-top" src="img_avatar1.png" alt="Card image">
 					<div class="card-body">
-						<h4 class="card-title">${restaurant.title }&nbsp;
+						<h4 class="card-title">${recip.title }&nbsp;
 							${restaurant.cuisine }</h4>
 						<p class="card-text">${restaurant.content}</p>
-						<a href="#"" class="btn btn-primary">상세정보</a>
+						<a href="#" " class="btn btn-primary">상세정보</a>
 					</div>
 				</div>
-		</c:forEach>
+			</c:forEach>
 		</div>
 	</div>
 	<br />

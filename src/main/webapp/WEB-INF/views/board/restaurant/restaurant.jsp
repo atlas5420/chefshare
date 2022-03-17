@@ -9,8 +9,8 @@
 <%@ include file="../../layout/header.jsp"%>
 <%@include file="../../layout/boardLayout.jsp"%>
 <style>
-.cardsize{
-	width:40%;
+.cardsize {
+	width: 40%;
 }
 </style>
 </head>
@@ -18,23 +18,26 @@
 
 	<div class="container">
 		<br />
-		<h2>
-			Restaurants
+		<div class="d-flex justify-content-between">
+			<h2>Restaurants(레스토랑)</h2>
 			<button type="button" class="btn btn-dark"
 				onclick="location.href='/restaurant/write'">업체 등록</button>
-		</h2>
+		</div>
 		<br /> <br />
-	<div class="container ">
+		<div class="container ">
 		<c:forEach var="restaurant" items="${restaurants }">
-				<div class="card cardsize m-3" >
-				이미지
-					<div class="card-body">
-						<h4 class="card-title">${restaurant.title }&nbsp;
-							${restaurant.cuisine }</h4>
-						<p class="card-text">${restaurant.content}</p>
-						<a href="/restaurant/${restaurant.id }" class="btn btn-primary">상세정보</a>
+				<div>
+					<div class="card cardsize m-3 " >
+						이미지
+						<div class="card-body">
+							<h4 class="card-title">${restaurant.title }&nbsp;
+								${restaurant.cuisine }</h4>
+							<p class="card-text">${restaurant.content}</p>
+							<a href="/restaurant/${restaurant.id }" class="btn btn-primary">상세정보</a>
+						</div>
 					</div>
 				</div>
+			
 		</c:forEach>
 		</div>
 	</div>

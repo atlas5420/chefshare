@@ -21,14 +21,15 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<!-- Core theme CSS (includes Bootstrap)-->
-<link href="/css/styles.css" rel="stylesheet" />
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 </head>
 
 <body>
 	<!-- Responsive navbar-->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container px-5">
+		<div class="container px-5 ">
 			<a class="navbar-brand" href="/">셰프세요</a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -36,14 +37,14 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
 				<c:choose>
 					<c:when test="${empty principal}">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 							<li class="nav-item"><a class="nav-link hover"
 								aria-current="page" href="/">Home</a></li>
-							<li class="nav-item"><a class="nav-link hover"
-								href="/recipe">recipe</a></li>
+							<!-- <li class="nav-item"><a class="nav-link hover"
+								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
 								href="/restaurant">restaurant</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>
@@ -56,8 +57,8 @@
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
 							<li class="nav-item"><a class="nav-link hover"
 								aria-current="page" href="/">Home</a></li>
-							<li class="nav-item"><a class="nav-link hover"
-								href="/recipe">recipe</a></li>
+							<!-- <li class="nav-item"><a class="nav-link hover"
+								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
 								href="/restaurant">restaurant</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>

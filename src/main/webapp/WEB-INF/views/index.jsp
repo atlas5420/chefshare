@@ -3,21 +3,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 <%@ include file="layout/header.jsp"%>
+<%@include file="layout/boardLayout.jsp"%>
 </head>
 <body>
 	<!-- Page Content-->
-	<div class="container px-4 px-lg-5">
+	<div class="container" >
 		<!-- Heading Row-->
-		<div class="row gx-4 gx-lg-5 align-items-center my-5">
+		<div class="row gx-4 gx-lg-5 align-items-center my-5" >
 			<%@ include file="layout/carousel.jsp"%>
-			<div class="col-lg-5">
-				<h1 class="font-weight-light">Business Name or Tagline</h1>
-				<p>This is a template that is great for small businesses. It
-					doesn't have too much fancy flare to it, but it makes a great use
-					of the standard Bootstrap core components. Feel free to use this
-					template for any project you want!</p>
-				<a class="btn btn-primary" href="#!">Call to Action!</a>
+			<div class="col-lg-5" style="text-align:center;">
+				<h1 class="font-weight-light">모든 쉐프들의 공간</h1>
+				<p>요리는 새로운 세상을 창조하는 일<br/>여러분의 경험과 지식을 공유해주세요<br /></p>
 			</div>
 		</div>
 

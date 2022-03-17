@@ -13,10 +13,13 @@
   /* Make the image fully responsive */
   .carousel-inner img {
     width: 100%;
-    height: 100%;
+    object-fit:cover;
   }
-  .carousel{
+  .carousel {
   width:50%;
+  }
+  .maincontainer {
+  height:100px;
   }
   </style>
 </head>
@@ -31,9 +34,9 @@
 		</ul>
 
 		<!-- The slideshow -->
-		<div class="carousel-inner ">
+		<div class="carousel-inner " style="height:200px;">
 			<div class="carousel-item active" >
-				<img src="../img/1.jpg" alt="Los Angeles">
+				<img src="../img/1.jpg" >
 			</div>
 			<div class="carousel-item">
 				<img src="../img/2.jpg" alt="Chicago">

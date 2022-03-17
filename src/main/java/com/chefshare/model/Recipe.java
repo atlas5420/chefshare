@@ -36,9 +36,6 @@ public class Recipe {
 	private String menu;
 	
 	@Column(nullable = false, length = 100)
-	private String meatVege;
-	
-	@Column(nullable = false, length = 100)
 	private String cousine;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
