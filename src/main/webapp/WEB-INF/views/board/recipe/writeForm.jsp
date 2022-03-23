@@ -62,7 +62,6 @@
 	
 	<button id="btn-restaurant-write" class="btn btn-primary">등록</button>
 	<script src="../js/restaurant.js"></script>
-	<script src="../js/scripts.js"></script>
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>

@@ -27,7 +27,6 @@
 		<button id="btn-update" class="btn btn-primary">회원정보수정</button>
 	</div>
 	<script src="../js/user.js"></script>
-	<script src="../js/scripts.js"></script>
 	<%@ include file="../layout/footer.jsp"%>
 </body>
 </html>

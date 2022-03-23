@@ -21,21 +21,16 @@
 		<p>검색 : <input type="text"></p>
 		<br /> <br />
 		<div class="container justify-content-center">
-			<c:forEach var="restaurant" items="${recipe}">
-				<div class="card w-50 m-3">
-					<img class="card-img-top" src="img_avatar1.png" alt="Card image">
-					<div class="card-body">
-						<h4 class="card-title">${recip.title }&nbsp;
-							${restaurant.cuisine }</h4>
-						<p class="card-text">${restaurant.content}</p>
-						<a href="#" " class="btn btn-primary">상세정보</a>
-					</div>
-				</div>
+			<c:forEach var="recipe" items="${recipe}">
+				<div class="card">
+  <div class="card-header"></div>
+  <div class="card-body">Content</div>
+  <div class="card-footer">Footer</div>
+</div>
 			</c:forEach>
 		</div>
 	</div>
 	<br />
-
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
 </html>
