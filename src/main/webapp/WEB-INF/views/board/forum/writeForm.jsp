@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <%@ include file="../../layout/header.jsp"%>
 <%@ include file="../../layout/boardLayout.jsp"%>
 
@@ -21,6 +17,8 @@
 </head>
 
 <body>
+	<br />
+	<div class="container">
 	<form>
 		<div class="form-group ">
 			<label for="title"></label> <input type="text" class="form-control"
@@ -31,14 +29,17 @@
 			<textarea class="form-control summernote" rows="5" id="content"></textarea>
 		</div>
 	</form>
-	<button id="btn-board-write" class="btn btn-primary">작성</button>
+	<div class="d-flex justify-content-end">
+	<button id="btn-board-write" class="btn btn-primary">등록</button>
+	</div>
 	<script>
 		$('.summernote').summernote({
 			tabsize : 2,
 			height : 300
 		});
 	</script>
+</div>
 	<script src="../js/board.js"></script>
+		<br />
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
-</html>

@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <%@ include file="../../layout/header.jsp"%>
 <%@include file="../../layout/boardLayout.jsp"%>
 </head>
@@ -61,10 +57,9 @@
 			<div class="container d-flex justify-content-end">
 				<button type="button" class="btn btn-outline-dark"
 					onclick="location.href='/forum/wirte'">글쓰기</button>
-				<button type="button" class="btn btn-outline-dark">Dark</button>
 			</div>
 		</c:if>
 	</div>
+	<br />
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
-</html>

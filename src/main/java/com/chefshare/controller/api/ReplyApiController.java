@@ -19,14 +19,14 @@ public class ReplyApiController {
 	private ReplyService replyService;
 
 	// 데이터를 받을때 controller에서 dto를 만들어서 받는게 일반적임
-	@PostMapping("/board/{boardId}/reply")
+	@PostMapping("/forum/{boardId}/reply")
 	public ResponseDto<Integer> reply(@RequestBody ReplyRequestDto replyRequestDto) {
 
 		replyService.write(replyRequestDto);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
-	@DeleteMapping("/board/{boardId}/reply/{replyId}")
+	@DeleteMapping("/forum/{boardId}/reply/{replyId}")
 	public ResponseDto<Integer> replyDelete(@PathVariable int replyId){
 		replyService.delete(replyId);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);

@@ -1,27 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    object-fit:cover;
-  }
-  .carousel {
-  width:50%;
-  }
-  .maincontainer {
-  height:100px;
-  }
-  </style>
+/* Make the image fully responsive */
+.carousel-inner img {
+	width: 100%;
+	object-fit: cover;
+}
+
+.carousel {
+	width: 50%;
+}
+
+.maincontainer {
+	height: 100px;
+}
+</style>
 </head>
 <body>
 	<div id="demo" class="carousel slide" data-ride="carousel">
@@ -34,9 +36,9 @@
 		</ul>
 
 		<!-- The slideshow -->
-		<div class="carousel-inner " style="height:200px;">
-			<div class="carousel-item active" >
-				<img src="../img/1.jpg" >
+		<div class="carousel-inner " style="height: 200px;">
+			<div class="carousel-item active">
+				<img src="../img/1.jpg">
 			</div>
 			<div class="carousel-item">
 				<img src="../img/2.jpg" alt="Chicago">
@@ -55,4 +57,3 @@
 
 	</div>
 </body>
-</html>

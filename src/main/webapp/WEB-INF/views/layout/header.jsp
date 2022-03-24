@@ -46,8 +46,9 @@
 							<!-- <li class="nav-item"><a class="nav-link hover"
 								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
-								href="/restaurant">restaurant</a></li>
-							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>
+								href="/restaurant">레스토랑</a></li>
+								<li class="nav-item"><a class="nav-link hover" href="/recipe">레시피</a></li>
+							<li class="nav-item"><a class="nav-link hover" href="/forum">포럼</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/login">Login</a></li>
 							<li class="nav-item"><a class="nav-link hover"
 								href="/register">Join</a></li>
@@ -60,8 +61,9 @@
 							<!-- <li class="nav-item"><a class="nav-link hover"
 								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
-								href="/restaurant">restaurant</a></li>
-							<li class="nav-item"><a class="nav-link hover" href="/forum">forum</a></li>
+								href="/restaurant">레스토랑</a></li>
+								<li class="nav-item"><a class="nav-link hover" href="/recipe">레시피</a></li>
+							<li class="nav-item"><a class="nav-link hover" href="/forum">포럼</a></li>
 							<li class="nav-item"><a class="nav-link hover"
 								href="/profile">회원정보</a></li>
 							<li class="nav-item"><a class="nav-link hover"

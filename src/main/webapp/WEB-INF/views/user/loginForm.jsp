@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
 <%@ include file="../layout/header.jsp"%>
 </head>
@@ -23,4 +21,3 @@
 	</div>
 	<%@ include file="../layout/footer.jsp"%>
 </body>
-</html>

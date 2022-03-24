@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
 <%@ include file="../layout/header.jsp"%>
 </head>
@@ -18,10 +16,12 @@
 				<label for="email">Email</label> <input type="email"
 					value="${principal.user.email }" class="form-control"
 					placeholder="Enter email" id="email">
+					<div id="email_check"></div>
 			</div>
 			<div class="form-group">
 				<label for="password">Password:</label> <input type="password"
 					class="form-control" placeholder="Enter password" id="password">
+					<div id="pwd_check"></div>
 			</div>
 		</form>
 		<button id="btn-update" class="btn btn-primary">회원정보수정</button>
@@ -29,4 +29,3 @@
 	<script src="../js/user.js"></script>
 	<%@ include file="../layout/footer.jsp"%>
 </body>
-</html>

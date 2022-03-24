@@ -14,7 +14,7 @@ let replyindex = {
 
 		$.ajax({
 			type: "POST",
-			url: `/board/${data.boardId}/reply`,
+			url: `/forum/${data.boardId}/reply`,
 			data: JSON.stringify(data),
 			contentType: "application/json; charset=utf-8",
 			dataType: "json"
@@ -30,7 +30,7 @@ let replyindex = {
 
 		$.ajax({
 			type: "DELETE",
-			url: `/board/${boardId}/reply/${replyId}`,
+			url: `/forum/${boardId}/reply/${replyId}`,
 			dataType: "json"
 		}).done(function(resp) {
 			alert("댓글삭제 완료");

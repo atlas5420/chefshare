@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 <%@ include file="../../layout/header.jsp"%>
 <%@ include file="../../layout/boardLayout.jsp"%>
 <body>
@@ -42,7 +38,7 @@
 		</div>
 		<br />
 	</form>
-
+	
 	<form action="/restaurant/writeProc" method="post"
 		enctype="multipart/form=data">
 		<div class="form-group ">
@@ -50,13 +46,12 @@
 				id="image">
 		</div>
 	</form>
+	
 	<div class="d-flex justify-content-end">
 		<button class="btn btn-primary"
 			onclick="location.href='/restaurant/update/${restaurant.id}'">수정</button>
 		<button id="btn-restaurant-delete" class="btn btn-primary">삭제</button>
 	</div>
 	<script src="../../js/restaurant.js"></script>
-	<script src="../../js/scripts.js"></script>
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
-</html>
