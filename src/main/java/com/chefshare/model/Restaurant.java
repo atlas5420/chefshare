@@ -1,5 +1,8 @@
 package com.chefshare.model;
 
+
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +10,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,9 +47,6 @@ public class Restaurant {
 	private String address;
 
 	@Column(nullable = true, length = 100)
-	private String img;
-
-	@Column(nullable = true, length = 100)
 	private String map;
 
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -54,4 +57,13 @@ public class Restaurant {
 	@JoinColumn(name = "email")
 	private User email;
 
+	@Lob
+	private String image;
+	
+	@Column(length = 100)
+	private String filePath;
+	
+	@ManyToOne
+	@JoinColumn(name = "restaurantId")
+	private Restaurant restaurant;
 }

@@ -10,8 +10,8 @@
 
 	<form action="/test/file" method="post" enctype="multipart/form=data">
 		<div class="form-group ">
-			<label for="image">Image :&nbsp;</label> <input type="email"
-				id="image">
+			<label for="image">Image :&nbsp;</label> <input type="file"
+				id="image" name="uploadfile">
 		</div>
 		<button type="submit"></button>
 	</form>

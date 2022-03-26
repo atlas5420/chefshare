@@ -1,23 +1,17 @@
 package com.chefshare.controller.api;
 
-import javax.validation.Valid;
-
-//import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.chefshare.dto.ResponseDto;
-import com.chefshare.dto.UserRequestDto;
 import com.chefshare.model.User;
 import com.chefshare.service.UserService;
 
