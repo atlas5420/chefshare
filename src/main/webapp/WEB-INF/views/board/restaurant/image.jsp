@@ -9,11 +9,10 @@
 <body>
 <form name="image" method="post" enctype="multipart/form-data" >
 		<div class="form-group ">
-		<input type="text" name="extra">
 			<input type="file" id="file" name="file" accept="image/*" >
 		</div>
-		<input type="submit"  value="이미지등록">
+		<input type="submit"  id="btn-mage" value="이미지등록">
 	</form>
-	
+	<script src="/js/restaurant.js"></script>
 </body>
 </html>

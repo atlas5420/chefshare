@@ -3,6 +3,7 @@ package com.chefshare.model;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,8 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.mysql.cj.jdbc.Blob;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -57,13 +61,8 @@ public class Restaurant {
 	@JoinColumn(name = "email")
 	private User email;
 
-	@Lob
-	private String image;
-	
-	@Column(length = 100)
-	private String filePath;
-	
-	@ManyToOne
-	@JoinColumn(name = "restaurantId")
-	private Restaurant restaurant;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name= "imageId")
+	private Image image;
+
 }

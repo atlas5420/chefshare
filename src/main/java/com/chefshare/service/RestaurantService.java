@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.chefshare.model.Image;
@@ -28,16 +29,17 @@ public class RestaurantService {
 	private ImageRepository imageRepository;
 	
 	@Transactional
-	public void wirte(Restaurant restaurant, User user) {
+	public void wirte(Restaurant restaurant, User user, Image image) throws IOException {
 		restaurant.setUser(user);
 		restaurant.setEmail(user);
+		restaurant.setImage(image);
 		restaurantRepository.save(restaurant);
 	}
 
 	@Transactional
-	public void fileSave(Image image, MultipartFile file) throws IOException {
-		String path = System.getProperty("user.dir") + "\\imagetest";
-		UUID uuid = UUID.randomUUID();
+	public void fileSave(MultipartFile file, Image image) throws IOException {
+		String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
+		UUID uuid = UUID.randomUUID(); 
 		String fileName = uuid + "_" + file.getOriginalFilename();
 		File savefile = new File(path, fileName);
 		file.transferTo(savefile);
@@ -50,7 +52,12 @@ public class RestaurantService {
 	
 	@Transactional
 	public List<Restaurant> list() {
+		
 		return restaurantRepository.findAll();
+	}
+	
+	public List<Image> image(){
+		return imageRepository.findAll();
 	}
 
 	@Transactional(readOnly = true)

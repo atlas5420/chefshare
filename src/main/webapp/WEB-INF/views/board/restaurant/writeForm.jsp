@@ -5,7 +5,8 @@
 <%@ include file="../../layout/boardLayout.jsp"%>
 <body>
 	<form
-		class="col-xl-5 col-lg-6 col-md-8  col-sm-10 mx-auto text-center form p-4">
+		class="col-xl-5 col-lg-6 col-md-8  col-sm-10 mx-auto text-center form p-4"
+		id="form" enctype="multipart/form-data">
 		<div class="form-group ">
 			<label for="title">업체명</label> <input type="text"
 				class="form-control" id="title">
@@ -53,12 +54,12 @@
 				class="w-75 " id="address" placeholder="주소를 입력해 주세요">
 		</div>
 		<br />
-
-	</form>
-	<form id="image" method="post" enctype="multipart/form-data">
 		<div class="form-group ">
-			<input type="file" id="file" name="file" >
+		<label for="file">image :&nbsp;</label>
+			<input type="file" id="file" name="file" accept="image/*">
 		</div>
+	</form>
+
 	</form>
 	<button id="btn-restaurant-write" class="btn btn-primary">등록</button>
 	<script src="../js/restaurant.js"></script>

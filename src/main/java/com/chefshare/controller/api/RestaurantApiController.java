@@ -1,6 +1,8 @@
 package com.chefshare.controller.api;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,18 +33,28 @@ public class RestaurantApiController {
 	private RestaurantService restaurantService;
 	
 	@PostMapping("/restaurant/writeProc")
-	public ResponseDto<Integer> save(@RequestBody Restaurant restaurant, @AuthenticationPrincipal PrincipalDetail principal) throws IOException {
+	public ResponseDto<Integer> save(@RequestPart(value = "key") Restaurant restaurant, @AuthenticationPrincipal PrincipalDetail principal, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException {
 		System.out.println(restaurant.getTitle());
-		restaurantService.wirte(restaurant, principal.getUser());
+
+//		String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
+//		UUID uuid = UUID.randomUUID(); 
+//		String fileName = uuid + "_" + file.getOriginalFilename();
+//		File savefile = new File(path, fileName);
+//		file.transferTo(savefile);
+//		image.setFilename(fileName);
+//		image.setFilepath(path);
+//		System.out.println("service test");
+//		System.out.println(file.getOriginalFilename());
 		
+		restaurantService.wirte(restaurant, principal.getUser(), image);
+		restaurantService.fileSave(file, image);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	@PostMapping("/restaurant/imageProc")
-	public void imageSave(Image image, MultipartFile file) throws IOException {
+	public void imageSave(@RequestPart(value = "image", required = false)  MultipartFile file, Image image) throws IOException {
 		System.out.println(file.getOriginalFilename());
-		
-		restaurantService.fileSave(image, file);
+		restaurantService.fileSave(file, image);
 
 		 
 	}

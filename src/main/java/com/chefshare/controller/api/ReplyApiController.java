@@ -21,7 +21,6 @@ public class ReplyApiController {
 	// 데이터를 받을때 controller에서 dto를 만들어서 받는게 일반적임
 	@PostMapping("/forum/{boardId}/reply")
 	public ResponseDto<Integer> reply(@RequestBody ReplyRequestDto replyRequestDto) {
-
 		replyService.write(replyRequestDto);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}

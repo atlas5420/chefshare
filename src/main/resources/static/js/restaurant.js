@@ -1,9 +1,7 @@
 let restaurantindex = {
 	init: function() {
 		$("#btn-restaurant-write").on("click", () => {
-			this.image();
 			this.write();
-			
 		});
 		$("#btn-restaurant-update").on("click", () => {
 			this.update();
@@ -19,20 +17,24 @@ let restaurantindex = {
 
 
 	write: function() {
-		let data = {
+		var data = {
 			title: $("#title").val(),
 			content: $("#content").val(),
 			cuisine: $("#cuisine").val(),
 			region: $("#region").val(),
-			address: $("#address").val(),
-		}
-
+			address: $("#address").val()
+		};
+		var formData = new FormData($('#form')[0]);
+		
+		formData.append('file', $('#file'));
+		formData.append('key', new Blob([JSON.stringify(data)] , {type: "application/json"}));
+		
 		$.ajax({
 			type: "POST",
-			enctype: "multipart/form-data",
 			url: "/restaurant/writeProc",
-			data: JSON.stringify(data),
-			contentType: "application/json; charset=utf-8",
+			data: formData,
+			contentType: false,
+			processData: false,
 			dataType: "json"
 		}).done(function(resp) {
 			console.log(data);
@@ -46,20 +48,19 @@ let restaurantindex = {
 
 	image: function() {
 		var formData = new FormData($('#image')[0]);
-		
+		console.log(formData);		
 
 		$.ajax({
 			type: "POST",
-			url: "/restaurant/imageProc",
+			url: "/test/image",
 			processData: false,
 			contentType: false,
 			data: formData,
 			dataType: 'json',
-			success: function(){
+			}).done(function(resp){
 			console.log(formData);
 			alert("등록성공");
-			}
-		})
+			})
 		
 	},
 
