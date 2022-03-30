@@ -25,30 +25,31 @@ let restaurantindex = {
 			address: $("#address").val()
 		};
 		var formData = new FormData($('#form')[0]);
-		
 		formData.append('file', $('#file'));
-		formData.append('key', new Blob([JSON.stringify(data)] , {type: "application/json"}));
-		
-		$.ajax({
-			type: "POST",
-			url: "/restaurant/writeProc",
-			data: formData,
-			contentType: false,
-			processData: false,
-			dataType: "json"
-		}).done(function(resp) {
-			console.log(data);
-			alert("글작성 완료");
-			location.href = "/restaurant";
-		}).fail(function(error) {
-			alert(JSON.stringify(error));
-		})
-
+		formData.append('key', new Blob([JSON.stringify(data)], { type: "application/json" }));
+		if (data.region =null) {
+			alert("region을 설정하세요");
+		} else {
+			$.ajax({
+				type: "POST",
+				url: "/restaurant/writeProc",
+				data: formData,
+				contentType: false,
+				processData: false,
+				dataType: "json"
+			}).done(function(resp) {
+				console.log(data);
+				alert("글작성 완료");
+				location.href = "/restaurant";
+			}).fail(function(error) {
+				alert(JSON.stringify(error));
+			})
+		}
 	},
 
 	image: function() {
 		var formData = new FormData($('#image')[0]);
-		console.log(formData);		
+		console.log(formData);
 
 		$.ajax({
 			type: "POST",
@@ -57,11 +58,11 @@ let restaurantindex = {
 			contentType: false,
 			data: formData,
 			dataType: 'json',
-			}).done(function(resp){
+		}).done(function(resp) {
 			console.log(formData);
 			alert("등록성공");
-			})
-		
+		})
+
 	},
 
 

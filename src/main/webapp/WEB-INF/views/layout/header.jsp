@@ -28,16 +28,16 @@
 
 <body>
 	<!-- Responsive navbar-->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-		<div class="container px-5 ">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark  ">
+		<div class="container">
 			<a class="navbar-brand" href="/">셰프세요</a>
 			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
+				data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+
 				<c:choose>
 					<c:when test="${empty principal}">
 						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -47,7 +47,8 @@
 								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
 								href="/restaurant">레스토랑</a></li>
-								<li class="nav-item"><a class="nav-link hover" href="/recipe">레시피</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/recipe">레시피</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/forum">포럼</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/login">Login</a></li>
 							<li class="nav-item"><a class="nav-link hover"
@@ -62,7 +63,8 @@
 								href="/recipe">recipe</a></li>  -->
 							<li class="nav-item"><a class="nav-link hover"
 								href="/restaurant">레스토랑</a></li>
-								<li class="nav-item"><a class="nav-link hover" href="/recipe">레시피</a></li>
+							<li class="nav-item"><a class="nav-link hover"
+								href="/recipe">레시피</a></li>
 							<li class="nav-item"><a class="nav-link hover" href="/forum">포럼</a></li>
 							<li class="nav-item"><a class="nav-link hover"
 								href="/profile">회원정보</a></li>
@@ -73,6 +75,8 @@
 				</c:choose>
 			</div>
 		</div>
+
+
 	</nav>
 </body>
 </html>

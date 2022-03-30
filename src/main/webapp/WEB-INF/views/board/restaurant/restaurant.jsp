@@ -16,26 +16,27 @@
 		<br />
 		<div class="d-flex justify-content-between">
 			<h2>Restaurants(레스토랑)</h2>
-			<button type="button" class="btn btn-dark"
-				onclick="location.href='/restaurant/write'">업체 등록</button>
+			<c:if test="${principal.user.id ne null}">
+				<button type="button" class="btn btn-dark"
+					onclick="location.href='/restaurant/write'">업체 등록</button>
+			</c:if>
 		</div>
 		<br /> <br />
 		<div class="container d-flex flex-wrap justify-content-center">
-				<c:forEach var="restaurant" items="${restaurants }">
-					<div>
-						<div class="card m-3 ">
-							<img src="/img/${restaurant.image.filename}">
-							<div class="card-body">
-								<h4 class="card-title">${restaurant.title }&nbsp;
-									${restaurant.cuisine }</h4>
-								<p class="card-text">${restaurant.content}</p>
-								<a href="/restaurant/${restaurant.id }" class="btn btn-primary">상세정보</a>
-							</div>
+			<c:forEach var="restaurant" items="${restaurants }">
+				<div>
+					<div class="card m-3 ">
+						<img src="/img/${restaurant.image.filename}">
+						<div class="card-body">
+							<h4 class="card-title">${restaurant.title }</h4>
+							<p class="card-text">${restaurant.region} &nbsp;${restaurant.cuisine}</p>
+							<a href="/restaurant/${restaurant.id }" class="btn btn-primary">상세정보</a>
 						</div>
 					</div>
-				</c:forEach>
-			</div>
+				</div>
+			</c:forEach>
 		</div>
+	</div>
 	<br />
 	<%@ include file="../../layout/footer.jsp"%>
 </body>

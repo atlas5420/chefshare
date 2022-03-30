@@ -21,17 +21,11 @@
 		<div class="form-group ">
 			<label for="cuisine">Cuisine :</label> <input type="text"
 				class="w-25 text-center" name="cuisine" value="" id="cuisine"
-				readonly> <br /> <input type="radio"
-				class="form-check-input" name="cuisineSelect" value="한식"
-				onchange="selectCuisine()" />&nbsp;한식&nbsp;&nbsp; <input
-				type="radio" class="form-check-input" name="cuisineSelect"
-				value="중식" onchange="selectCuisine()" />&nbsp;중식 &nbsp;&nbsp; <input
-				type="radio" class="form-check-input" name="cuisineSelect"
-				value="일식" onchange="selectCuisine()" />&nbsp;일식&nbsp;&nbsp; <input
-				type="radio" class="form-check-input" name="cuisineSelect"
-				value="양식" onchange="selectCuisine()" />&nbsp;양식 &nbsp;&nbsp; <input
-				type="radio" class="form-check-input" name="cuisineSelect"
-				value="카페" onchange="selectCuisine()" />&nbsp;카페
+				readonly> <br /> <input type="radio" class="form-check-input" name="cuisineSelect" value="한식" onchange="selectCuisine()" />한식&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" class="form-check-input" name="cuisineSelect" value="중식" onchange="selectCuisine()" />중식&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" class="form-check-input" name="cuisineSelect" value="일식" onchange="selectCuisine()" />일식&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" class="form-check-input" name="cuisineSelect" value="양식" onchange="selectCuisine()" />양식&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="radio" class="form-check-input" name="cuisineSelect" value="카페" onchange="selectCuisine()" />카페
 		</div>
 		<!-- radio 선택 값 input에 표시 -->
 		<script>
@@ -55,8 +49,8 @@
 		</div>
 		<br />
 		<div class="form-group ">
-		<label for="file">image :&nbsp;</label>
-			<input type="file" id="file" name="file" accept="image/*">
+			<label for="file">image :&nbsp;</label> <input type="file" id="file"
+				name="file" accept="image/*">
 		</div>
 	</form>
 

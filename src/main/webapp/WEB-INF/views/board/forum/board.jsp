@@ -12,20 +12,20 @@
 		<h2>게시판</h2>
 		<table class="table table-striped">
 			<thead>
-				<tr>
-					<th>번호</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
+				<tr class="row">
+					<th class="d-inline-block col-3">번호</th>
+					<th class="d-inline-block col-4">제목</th>
+					<th class="d-inline-block col-3">작성자</th>
+					<th class="d-inline-block col-2">작성일</th>
 				</tr>
 			</thead>
 			<c:forEach var="board" items="${boards.content }">
 				<tbody>
-					<tr>
-						<td>${board.id }</td>
-						<td><a href="/forum/${board.id }">${board.title }</a></td>
-						<th>${board.user.username }</th>
-						<td>${board.timestamp }</td>
+					<tr  class="row">
+						<td class="d-inline-block col-3">${board.id }</td>
+						<td class="d-inline-block col-4"><a href="/forum/${board.id }">${board.title }</a></td>
+						<th class="d-inline-block col-3">${board.user.username }</th>
+						<td class="d-inline-block col-2">${board.timestamp }</td>
 					</tr>
 				</tbody>
 			</c:forEach>

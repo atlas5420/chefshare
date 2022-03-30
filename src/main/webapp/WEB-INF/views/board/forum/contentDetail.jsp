@@ -16,10 +16,11 @@
 <body>
 	<div class="container">
 		<div class="form-group ">
+		<br/>
 			<div>
 				글번호:<span id="id"><i>${board.id }</i></span> 작성자:<span id="id"><i>${board.user.username }</i></span>
 			</div>
-
+<br/>
 			<h3>${board.title }</h3>
 		</div>
 		<hr />

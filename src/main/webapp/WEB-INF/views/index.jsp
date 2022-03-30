@@ -6,13 +6,21 @@
 </head>
 <body>
 	<!-- Page Content-->
-	<div class="container" >
+	<div class="container">
 		<!-- Heading Row-->
-		<div class="row gx-4 gx-lg-5 align-items-center my-5" >
+		<div class="row gx-4 gx-lg-5 align-items-center my-5">
 			<%@ include file="layout/carousel.jsp"%>
-			<div class="col-lg-5" style="text-align:center;">
-				<h1 class="font-weight-light">모든 쉐프들의 공간</h1>
-				<p>요리는 새로운 세상을 창조하는 일<br/>여러분의 경험과 지식을 공유해주세요<br /></p>
+			<div class="col-lg-12" style="text-align: center;">
+				<br /><br />
+				<div class="align-items-center" style="width:100%;">
+						<h1 class="font-weight-light">모든 쉐프들의 공간</h1>
+						<br/>
+						<p>
+							요리는 새로운 세상을 창조하는 일<br />여러분의 경험과 지식을 공유해주세요<br />
+						</p>
+				</div>
+				<br />
+				<br />
 			</div>
 		</div>
 
@@ -43,18 +51,19 @@
 					<th>작성일</th>
 				</tr>
 			</thead>
-		<c:forEach var="board" items="${boards.content }">
-			<tbody>
-				<tr>
-					<td>${board.id }</td>
-					<td><a href="/forum/${board.id }">${board.title }</a></td>
-					<th>${board.user.username }</th>
-					<td>${board.timestamp }</td>
-				</tr>
-			</tbody>
-		</c:forEach>
+			<c:forEach var="board" items="${boards.content }">
+				<tbody>
+					<tr>
+						<td>${board.id }</td>
+						<td><a href="/forum/${board.id }">${board.title }</a></td>
+						<th>${board.user.username }</th>
+						<td>${board.timestamp }</td>
+					</tr>
+				</tbody>
+			</c:forEach>
 		</table>
 	</div>
-	<br/><br/>
+	<br />
+	<br />
 	<%@ include file="layout/footer.jsp"%>
 </body>

@@ -11,18 +11,23 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 /* Make the image fully responsive */
-.carousel-inner img {
-	width: 100%;
-	object-fit: cover;
-}
-
 .carousel {
-	width: 50%;
+	width: 100%;
+	height:400px;
 }
 
-.maincontainer {
-	height: 100px;
+.carousel-inner {
+	width:100%;
+	height:100%;
+
 }
+.carousel-item img {
+	width:100%;
+	height:100%;
+}
+
+
+
 </style>
 </head>
 <body>
@@ -36,15 +41,15 @@
 		</ul>
 
 		<!-- The slideshow -->
-		<div class="carousel-inner " style="height: 200px;">
+		<div class="carousel-inner " >
 			<div class="carousel-item active">
-				<img src="../img/1.jpg">
+				<img src="../img/carousel1.jpg">
 			</div>
 			<div class="carousel-item">
-				<img src="../img/2.jpg" alt="Chicago">
+				<img src="../img/carousel2.jpg" alt="Chicago">
 			</div>
 			<div class="carousel-item">
-				<img src="../img/3.jpg" alt="New York">
+				<img src="../img/carousel3.jpg" alt="New York">
 			</div>
 		</div>
 
