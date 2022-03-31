@@ -11,13 +11,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-
-import org.springframework.web.multipart.MultipartFile;
-
-import com.mysql.cj.jdbc.Blob;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
