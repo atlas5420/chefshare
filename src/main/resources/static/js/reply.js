@@ -20,7 +20,7 @@ let replyindex = {
 			dataType: "json"
 		}).done(function(resp) {
 			alert("댓글등록 완료");
-			location.href = `/board/${data.boardId}`;
+			location.href = `/forum/${data.boardId}`;
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		});
@@ -34,7 +34,7 @@ let replyindex = {
 			dataType: "json"
 		}).done(function(resp) {
 			alert("댓글삭제 완료");
-			location.href = `/board/${boardId}`;
+			location.href = `/forum/${boardId}`;
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		})

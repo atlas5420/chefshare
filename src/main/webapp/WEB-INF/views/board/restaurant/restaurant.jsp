@@ -26,7 +26,9 @@
 			<c:forEach var="restaurant" items="${restaurants }">
 				<div>
 					<div class="card m-3 ">
-						<img src="/img/${restaurant.image.filename}">
+					<div style="width:100%; height:300px;">
+						<img class="card-img-top" src="/img/${restaurant.image.filename}" style="width:100%; height:100%;">
+						</div>
 						<div class="card-body">
 							<h4 class="card-title">${restaurant.title }</h4>
 							<p class="card-text">${restaurant.region} &nbsp;${restaurant.cuisine}</p>

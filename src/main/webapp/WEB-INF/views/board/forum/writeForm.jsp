@@ -32,13 +32,13 @@
 	<div class="d-flex justify-content-end">
 	<button id="btn-board-write" class="btn btn-primary">등록</button>
 	</div>
-	<script>
+</div>
+<script>
 		$('.summernote').summernote({
 			tabsize : 2,
 			height : 300
 		});
 	</script>
-</div>
 	<script src="../js/board.js"></script>
 		<br />
 	<%@ include file="../../layout/footer.jsp"%>

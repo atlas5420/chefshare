@@ -29,6 +29,9 @@
 		<div class="d-flex justify-content-between">
 			<c:forEach var="restaurant" items="${restaurant.content }">
 				<div class="card" style="width: 30%">
+				<div style="width:100%; height:300px;">
+						<img class="card-img-top" src="/img/${restaurant.image.filename}" style="width:100%; height:100%;">
+						</div>
 					<div class="card-body">
 						<h2 class="card-title">${restaurant.title }</h2>
 						<p class="card-text">${restaurant.content }</p>

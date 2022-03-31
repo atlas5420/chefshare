@@ -4,6 +4,7 @@
 <%@ include file="../../layout/header.jsp"%>
 <%@ include file="../../layout/boardLayout.jsp"%>
 <body>
+<div class="container">
 	<form
 		class="col-xl-5 col-lg-6 col-md-8  col-sm-10 mx-auto text-center form p-4"
 		id="form" enctype="multipart/form-data">
@@ -53,9 +54,11 @@
 				name="file" accept="image/*">
 		</div>
 	</form>
-
-	</form>
+	<div class="d-flex justify-content-center">
 	<button id="btn-restaurant-write" class="btn btn-primary">등록</button>
+	</div>
+	<br/>
+	</div>
 	<script src="../js/restaurant.js"></script>
 	<%@ include file="../../layout/footer.jsp"%>
 </body>
