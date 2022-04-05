@@ -56,7 +56,7 @@ public class Restaurant {
 	@JoinColumn(name = "email")
 	private User email;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.REMOVE)
 	@JoinColumn(name= "imageId")
 	private Image image;
 

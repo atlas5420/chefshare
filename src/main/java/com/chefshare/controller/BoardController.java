@@ -27,7 +27,6 @@ public class BoardController {
 
 	@GetMapping("/forum/wirte")
 	public String write(@AuthenticationPrincipal PrincipalDetail principal) {
-		System.out.println("로그인 아이디  : " + principal.getUsername());
 		return "/board/forum/writeForm";
 	}
 	

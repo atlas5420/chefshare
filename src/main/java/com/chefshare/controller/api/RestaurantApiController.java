@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,36 +26,26 @@ public class RestaurantApiController {
 	private RestaurantService restaurantService;
 	
 	@PostMapping("/restaurant/writeProc")
-	public ResponseDto<Integer> save(@RequestPart(value = "key") Restaurant restaurant, @AuthenticationPrincipal PrincipalDetail principal, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException {
-		System.out.println(restaurant.getTitle());
-
-//		String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
-//		UUID uuid = UUID.randomUUID(); 
-//		String fileName = uuid + "_" + file.getOriginalFilename();
-//		File savefile = new File(path, fileName);
-//		file.transferTo(savefile);
-//		image.setFilename(fileName);
-//		image.setFilepath(path);
-//		System.out.println("service test");
-//		System.out.println(file.getOriginalFilename());
-		
+	public ResponseDto<Integer> save(@AuthenticationPrincipal PrincipalDetail principal, @RequestPart(value = "key") Restaurant restaurant, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException {
 		restaurantService.wirte(restaurant, principal.getUser(), image);
 		restaurantService.fileSave(file, image);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
+
+	@PutMapping("/restaurant/updateProc/{id}")
+	public ResponseDto<Integer> update(@PathVariable int id, @RequestPart(value = "key") Restaurant restaurant, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException{
+		System.out.println(restaurant.getCuisine());
+		System.out.println(file.getOriginalFilename());
+		restaurantService.update(id, restaurant, image); 
+		restaurantService.fileSave(file, image);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
+
 	@PostMapping("/restaurant/imageProc")
 	public void imageSave(@RequestPart(value = "image", required = false)  MultipartFile file, Image image) throws IOException {
 		System.out.println(file.getOriginalFilename());
 		restaurantService.fileSave(file, image);
-
-		 
-	}
-	
-	@PutMapping("/restaurant/updateProc/{id}")
-	public ResponseDto<Integer> update(@PathVariable int id, @RequestBody Restaurant restaurant){
-		restaurantService.update(id, restaurant); 
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	@DeleteMapping("/restaurant/deleteProc/{id}")

@@ -72,15 +72,18 @@ public class RestaurantService {
 	}
 
 	@Transactional
-	public void update(int id, Restaurant requestBoard) {
+	public void update(int id, Restaurant requestRestaurant, Image image) {
 		Restaurant restaurant = restaurantRepository.findById(id).orElseThrow(() -> {
 			return new IllegalArgumentException("글 읽기 실패");
 		});
-		restaurant.setTitle(requestBoard.getTitle());
-		restaurant.setContent(requestBoard.getContent());
-		restaurant.setCuisine(requestBoard.getCuisine());
-		restaurant.setRegion(requestBoard.getRegion());
-		restaurant.setAddress(requestBoard.getAddress());
+		System.out.println(requestRestaurant.getTitle());
+		System.out.println(requestRestaurant.getImage());
+		restaurant.setTitle(requestRestaurant.getTitle());
+		restaurant.setContent(requestRestaurant.getContent());
+		restaurant.setCuisine(requestRestaurant.getCuisine());
+		restaurant.setRegion(requestRestaurant.getRegion());
+		restaurant.setAddress(requestRestaurant.getAddress());
+		restaurant.setImage(image);
 	}
 
 	@Transactional
