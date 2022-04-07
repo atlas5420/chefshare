@@ -1,6 +1,5 @@
 package com.chefshare.service;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,6 +26,12 @@ public class BoardService {
 	@Transactional(readOnly = true)
 	public Page<Board> list(Pageable pageable) {
 		return boardRepository.findAll(pageable);
+	}
+	
+	@Transactional
+	public Page<Board> search(String search, Pageable pageable) {
+		Page<Board> searchList = boardRepository.findByTitleContaining(search, pageable); 
+		return searchList;
 	}
 	
 	@Transactional(readOnly = true)

@@ -38,5 +38,4 @@ public class BoardApiController {
 		boardService.delete(id);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
-
 }

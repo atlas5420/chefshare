@@ -35,8 +35,6 @@ public class RestaurantApiController {
 
 	@PutMapping("/restaurant/updateProc/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id, @RequestPart(value = "key") Restaurant restaurant, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException{
-		System.out.println(restaurant.getCuisine());
-		System.out.println(file.getOriginalFilename());
 		restaurantService.update(id, restaurant, image); 
 		restaurantService.fileSave(file, image);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
@@ -44,7 +42,6 @@ public class RestaurantApiController {
 
 	@PostMapping("/restaurant/imageProc")
 	public void imageSave(@RequestPart(value = "image", required = false)  MultipartFile file, Image image) throws IOException {
-		System.out.println(file.getOriginalFilename());
 		restaurantService.fileSave(file, image);
 	}
 	
