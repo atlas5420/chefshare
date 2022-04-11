@@ -18,7 +18,6 @@ public class BoardService {
 
 	@Transactional
 	public void write(Board board, User user) {
-		board.setCount(0);
 		board.setUser(user);
 		boardRepository.save(board);
 	}
@@ -39,6 +38,7 @@ public class BoardService {
 		return boardRepository.findById(id).orElseThrow(()->{
 			return new IllegalArgumentException("글 읽기 실패");
 		});
+		
 	}
 	
 	@Transactional

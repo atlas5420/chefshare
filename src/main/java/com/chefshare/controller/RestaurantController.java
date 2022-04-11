@@ -21,11 +21,7 @@ public class RestaurantController {
 		model.addAttribute("restaurants", restaurantService.list());
 		return "/board/restaurant/restaurant";
 	}
-	@GetMapping("/restaurant/image")
-	public String imgcall() {
-		return "/board/restaurant/image";
-	}
-
+	
 	@GetMapping("/restaurant/write")
 	public String wirte(@AuthenticationPrincipal PrincipalDetail principal) {
 		return "/board/restaurant/writeForm";

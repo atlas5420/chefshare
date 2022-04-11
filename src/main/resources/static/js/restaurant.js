@@ -38,7 +38,6 @@ let restaurantindex = {
 				processData: false,
 				dataType: "json"
 			}).done(function(resp) {
-				console.log(data);
 				alert("글작성 완료");
 				location.href = "/restaurant";
 			}).fail(function(error) {
@@ -49,17 +48,18 @@ let restaurantindex = {
 
 	update: function() {
 		let id = $("#id").val();
-
 		var data = {
 			title: $("#title").val(),
 			content: $("#content").val(),
 			cuisine: $("#cuisine").val(),
 			region: $("#region").val(),
-			address: $("#address").val()
+			address: $("#address").val(),
+			
 		};
 		var formData = new FormData($('#form')[0]);
 		formData.append('file', $('#file'));
 		formData.append('key', new Blob([JSON.stringify(data)], { type: "application/json" }));
+		
 			$.ajax({
 				type: "PUT",
 				url: "/restaurant/updateProc/" + id,
@@ -68,8 +68,8 @@ let restaurantindex = {
 				processData: false,
 				dataType: "json"
 			}).done(function(resp) {
-				alert("글수정 완료");
-				location.href = "/restaurant/" + id;
+				alert("글작성 완료");
+				location.href = "/restaurant" + id;
 			}).fail(function(error) {
 				alert(JSON.stringify(error));
 			})

@@ -34,7 +34,7 @@ public class RestaurantService {
 		restaurant.setImage(image);
 		restaurantRepository.save(restaurant);
 	}
-
+	
 	@Transactional
 	public void fileSave(MultipartFile file, Image image) throws IOException {
 		String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
@@ -44,9 +44,31 @@ public class RestaurantService {
 		file.transferTo(savefile);
 		image.setFilename(fileName);
 		image.setFilepath(path);
-		System.out.println("service test");
-		System.out.println(file.getOriginalFilename());
 		imageRepository.save(image);	
+		}
+	
+	@Transactional
+	public void update(int id, Restaurant requestRestaurant, Image image) {
+		Restaurant restaurant = restaurantRepository.findById(id).orElseThrow(() -> {
+			return new IllegalArgumentException("글 읽기 실패");
+		});
+		restaurant.setTitle(requestRestaurant.getTitle());
+		restaurant.setContent(requestRestaurant.getContent());
+		restaurant.setCuisine(requestRestaurant.getCuisine());
+		restaurant.setRegion(requestRestaurant.getRegion());
+		restaurant.setAddress(requestRestaurant.getAddress());
+	}
+	
+	@Transactional
+	public void fileSaveUpdate(MultipartFile file, Image image) throws IOException {
+		String path = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\img";
+		UUID uuid = UUID.randomUUID(); 
+		String fileName = uuid + "_" + file.getOriginalFilename();
+		File savefile = new File(path, fileName);
+		file.transferTo(savefile);
+		image.setFilename(fileName);
+		image.setFilepath(path);
+		imageRepository.save(image);
 		}
 	
 	@Transactional
@@ -69,21 +91,6 @@ public class RestaurantService {
 		return restaurantRepository.findById(id).orElseThrow(() -> {
 			return new IllegalArgumentException("글 읽기 실패");
 		});
-	}
-
-	@Transactional
-	public void update(int id, Restaurant requestRestaurant, Image image) {
-		Restaurant restaurant = restaurantRepository.findById(id).orElseThrow(() -> {
-			return new IllegalArgumentException("글 읽기 실패");
-		});
-		System.out.println(requestRestaurant.getTitle());
-		System.out.println(requestRestaurant.getImage());
-		restaurant.setTitle(requestRestaurant.getTitle());
-		restaurant.setContent(requestRestaurant.getContent());
-		restaurant.setCuisine(requestRestaurant.getCuisine());
-		restaurant.setRegion(requestRestaurant.getRegion());
-		restaurant.setAddress(requestRestaurant.getAddress());
-		restaurant.setImage(image);
 	}
 
 	@Transactional

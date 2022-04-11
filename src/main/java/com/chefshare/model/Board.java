@@ -42,8 +42,6 @@ public class Board {
 	@Lob
 	private String content;
 
-	private int count;
-
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "userId")
 	private User user;

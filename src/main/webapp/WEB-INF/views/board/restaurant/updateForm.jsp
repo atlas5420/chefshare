@@ -4,8 +4,10 @@
 <%@ include file="../../layout/header.jsp"%>
 <%@ include file="../../layout/boardLayout.jsp"%>
 <body>
-	<form id="form"
-		class="col-xl-5 col-lg-6 col-md-8  col-sm-10 mx-auto text-center form p-4">
+<div class="container">
+	<form
+		class="col-xl-5 col-lg-6 col-md-8  col-sm-10 mx-auto text-center form p-4"
+		id="form" enctype="multipart/form-data">
 		<input type="hidden" id="id" value="${restaurant.id }" />
 		<div class="form-group ">
 			<label for="title">업체명</label> <input type="text"
@@ -56,19 +58,17 @@
 				placeholder="주소를 입력해 주세요">
 		</div>
 		<br />
-		<div class="form-group " style="width: 100%; height: 50%;">
+		<div class="form-group " style="width: 100%;">
 			<label for="present-img">이전 이미지</label><br>
-			<img id="present-img" class="img-fluid" src="/img/${restaurant.image.filename }" style="max-width:50%;">
+			<img id="present-img" class="img-fluid" src="/img/${restaurant.image.filename }" style="max-width:100%;">
 		</div>
 		<div class="form-group ">
 			<label for="file">image :&nbsp;</label> <input type="file" id="file"
 				name="file" accept="image/*">
 		</div>
+		<button id="btn-restaurant-update" class="btn btn-primary">수정</button>
 	</form>
-
-	<button id="btn-restaurant-update" class="btn btn-primary">수정</button>
-
+</div>
 	<script src="../../js/restaurant.js"></script>
-	<script src="../../js/scripts.js"></script>
 	<%@ include file="../../layout/footer.jsp"%>
 </body>

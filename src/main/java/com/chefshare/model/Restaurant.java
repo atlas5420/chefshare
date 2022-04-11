@@ -1,8 +1,5 @@
 package com.chefshare.model;
 
-
-
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -56,7 +53,7 @@ public class Restaurant {
 	@JoinColumn(name = "email")
 	private User email;
 
-	@OneToOne(cascade = CascadeType.REMOVE)
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name= "imageId")
 	private Image image;
 

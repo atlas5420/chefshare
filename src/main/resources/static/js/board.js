@@ -49,7 +49,7 @@ let forumindex = {
 			dataType: "json"
 		}).done(function(resp) {
 			alert("글수정 완료");
-			location.href = "/forum/" + id;
+			history.back();
 		}).fail(function(error) {
 			alert(JSON.stringify(error));
 		})

@@ -32,17 +32,11 @@ public class RestaurantApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
-
 	@PutMapping("/restaurant/updateProc/{id}")
 	public ResponseDto<Integer> update(@PathVariable int id, @RequestPart(value = "key") Restaurant restaurant, @RequestPart(value = "file") MultipartFile file, Image image) throws IOException{
 		restaurantService.update(id, restaurant, image); 
 		restaurantService.fileSave(file, image);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
-	}
-
-	@PostMapping("/restaurant/imageProc")
-	public void imageSave(@RequestPart(value = "image", required = false)  MultipartFile file, Image image) throws IOException {
-		restaurantService.fileSave(file, image);
 	}
 	
 	@DeleteMapping("/restaurant/deleteProc/{id}")
